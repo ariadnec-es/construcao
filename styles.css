@@ -1,4 +1,3 @@
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -28,8 +27,9 @@ body {
 }
 
 .logo img {
-    height: 90px;
+    height: 100px;
     width: auto;
+    padding-left: 50px; 
 }
 
 .nav {
@@ -41,7 +41,7 @@ body {
 .nav ul {
     list-style: none;
     display: flex;
-    gap: 0px;
+    gap: 65px;
 }
 
 .nav ul li a {
@@ -513,9 +513,23 @@ footer {
         padding: 0;
     }
 
+    .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1px;
+    }
+
+    .logo img {
+        height: auto;
+        width: 250px;
+        margin-top: 90px; 
+
+    }
+    
+
     nav ul li {
         list-style: none;
-        margin: 0 0.3rem; /* Espaçamento lateral entre botões */
+        margin: 0 0.3rem; 
     }
 
     nav ul li a {
@@ -533,17 +547,17 @@ footer {
     }
 
     section {
-        padding-top: 3rem; /* Espaço extra para navbar fixa */
+        padding-top: 3rem; 
     }
 
-    /* Ajustando imagens em geral */
+
     #sobre img {
-        height: 190px; /* Mantém as proporções */
+        height: 190px; 
         width: 150px;
     }
     
     #placas {
-        height: 190px; /* Mantém as proporções */
+        height: 190px; 
         width: 150px;
     }
 
@@ -553,7 +567,7 @@ footer {
     }
 
     #home img, #localizacao img {
-       height: auto; /* Mantém as proporções */
+       height: auto; 
     }
 
     .taskbar {
@@ -613,9 +627,6 @@ footer {
     max-height: 300px;
     overflow-y: auto;
     border-radius: 10px;
-}
- 
-.card:hover {
 }
  
 .card:hover .card-front {
