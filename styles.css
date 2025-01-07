@@ -858,7 +858,7 @@ footer {
         background-color: #333;
         z-index: 1000;
         text-align: center; /* Centralizando o conteúdo */
-        padding: 0.5rem 0; /* Espaçamento interno */
+        padding: 0.05rem; /* Espaçamento interno */
     }
 
     nav ul {
@@ -872,7 +872,7 @@ footer {
 
     nav ul li {
         list-style: none;
-        margin: 0 0.5rem; /* Espaçamento lateral entre botões */
+        margin: 0 0.3rem; /* Espaçamento lateral entre botões */
     }
 
     nav ul li a {
@@ -893,35 +893,14 @@ footer {
         padding-top: 3rem; /* Espaço extra para navbar fixa */
     }
 
-    /* Imagem da placa solar abaixo do texto */
-    #segmentos {
-        display: flex;
-        flex-direction: column; /* Garantindo a ordem no mobile */
-        gap: 1rem;
-    }
-
-    #segmentos .text-content {
-        order: 1; /* Texto aparece primeiro */
-        text-align: justify; /* Alinha o texto */
-    }
-
-    #segmentos img {
-        order: 2; /* Imagem aparece depois do texto */
-        display: block;
-        margin: 0 auto; /* Centraliza a imagem */
-        width: 90%; /* Ajusta a largura para ocupar menos espaço */
-    }
-
-    /* Mapa reduzido no mobile */
-    #localizacao iframe {
-        width: 100%; /* Largura total no mobile */
-        height: 250px; /* Reduzindo a altura */
-        margin: 1rem 0; /* Espaçamento ao redor */
-    }
-
     /* Ajustando imagens em geral */
-    #home img, #sobre img, #segmentos img, #localizacao img {
-        height: auto; /* Mantém as proporções */
+    #sobre img {
+        height: 190px; /* Mantém as proporções */
+        width: 150px;
+    }
+
+    #home img, #segmentos img, #localizacao img {
+       height: auto; /* Mantém as proporções */
     }
 
     .taskbar {
