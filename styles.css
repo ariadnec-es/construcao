@@ -236,12 +236,6 @@ body {
     justify-content: center;
 }
 
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
 
 .card {
     width: 600px;
@@ -324,7 +318,7 @@ body {
     align-items: center;
     margin-top: 40px;
     padding: 20px;
-    background: linear-gradient(to right, #ff3232, #ff4500);
+    background: linear-gradient(to right, #fa4646d5, #3a1305de);
     color: white;
     border-radius: 8px;
     gap: 20px;
@@ -729,7 +723,7 @@ body {
     color: #333;
 }
 
-/* Estilo Geral da Seção de Contato */
+
 .contact {
     padding: 50px 20px;
     background-color: #000; 
@@ -737,7 +731,7 @@ body {
     text-align: center;
 }
 
-/* Contêiner principal com layout flexível */
+
 .contact-container {
     display: flex;
     justify-content: space-between;
@@ -757,19 +751,19 @@ body {
     text-align: center;
 }
 
-/* Logo da Empresa */
+
 .company-logo img {
     max-width: 150px;
     margin-bottom: 20px;
 }
 
-/* Título da seção */
+
 .contact-info h2 {
     font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* Links de Contato - ícones */
+
 .contact-links {
     display: flex;
     justify-content: center;
@@ -786,7 +780,7 @@ body {
 .contact-icon img {
     width: 100%;
     height: 100%;
-    filter: brightness(0) invert(1); /* Ícones brancos */
+    filter: brightness(0) invert(1); 
 }
 
 /* Parágrafo de Orçamento */
@@ -851,58 +845,159 @@ footer {
     margin-top: 50px;
     font-size: 14px;
 }
+ /* Responsividade */
+ 
+ /* Responsive Menu */
+ @media (max-width: 768px) {
+    /* Navbar */
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%; /* Garante que a largura ocupe toda a tela */
+        background-color: #333;
+        z-index: 1000;
+        text-align: center; /* Centralizando o conteúdo */
+        padding: 0.5rem 0; /* Espaçamento interno */
+    }
 
-/* Responsividade para iPhones e telas menores (menor que 768px) */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
+    nav ul {
+        display: flex;
+        flex-direction: row; /* Botões lado a lado */
+        justify-content: center;
         align-items: center;
+        margin: 0;
+        padding: 0;
     }
 
-    .contact-info {
-        max-width: 100%;
-        padding: 0 20px;
+    nav ul li {
+        list-style: none;
+        margin: 0 0.5rem; /* Espaçamento lateral entre botões */
     }
 
-    .location {
-        max-width: 100%;
-        padding: 0 20px;
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        display: inline-block;
     }
 
-    .contact-info h2 {
-        font-size: 24px;
+    nav ul li a:hover {
+        background-color: #444;
+        border-radius: 5px;
     }
 
-    .contact-info p {
-        font-size: 16px;
+    section {
+        padding-top: 3rem; /* Espaço extra para navbar fixa */
     }
 
-    .contact-info .btn {
-        width: 100%;
-        padding: 15px 20px;
-        font-size: 16px;
+    /* Imagem da placa solar abaixo do texto */
+    #segmentos {
+        display: flex;
+        flex-direction: column; /* Garantindo a ordem no mobile */
+        gap: 1rem;
     }
 
-    .map-container iframe {
-        width: 100%;
-        height: 250px;
+    #segmentos .text-content {
+        order: 1; /* Texto aparece primeiro */
+        text-align: justify; /* Alinha o texto */
     }
 
-    /* Alinha ícones de contato e logo para melhor visualização em celulares */
-    .contact-links {
-        flex-direction: column;
-        gap: 15px;
+    #segmentos img {
+        order: 2; /* Imagem aparece depois do texto */
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem */
+        width: 90%; /* Ajusta a largura para ocupar menos espaço */
     }
 
-    .company-logo img {
-        width: 130px;
+    /* Mapa reduzido no mobile */
+    #localizacao iframe {
+        width: 100%; /* Largura total no mobile */
+        height: 250px; /* Reduzindo a altura */
+        margin: 1rem 0; /* Espaçamento ao redor */
     }
 
-    .contact-icon img {
-        width: 40px;
-        height: 40px;
+    /* Ajustando imagens em geral */
+    #home img, #sobre img, #segmentos img, #localizacao img {
+        height: auto; /* Mantém as proporções */
+    }
+
+    .taskbar {
+        display: none;
     }
 }
+
+ 
+#btn-enviar-loader {
+    display: none;
+}
+ 
+#alerta {
+    position: fixed;
+    z-index: 10;
+    top: 100px;
+    right: 30px;
+}
+ 
+.card-container {
+     perspective: 1000px;
+}
+ 
+.card {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     transition: transform 1.5s;
+     transform-style: preserve-3d;
+     margin-bottom: 20px;
+     cursor: pointer;
+ }
+ 
+ .card .card-front,
+ .card .card-back {
+    width: 100%;
+    backface-visibility: hidden;
+}
+ 
+.card .card-front {
+    z-index: 2;
+    position: relative;
+}
+ 
+.card .card-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    z-index: 1;
+    display: none;
+    background-color: #021124;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.4s;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+ 
+.card:hover {
+    transform: rotateY(180deg);
+}
+ 
+.card:hover .card-front {
+    opacity: 0;
+}
+ 
+.card:hover .card-back {
+    display: block;
+    opacity: 1;
+}
+
+
 
 
 
